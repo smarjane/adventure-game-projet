@@ -11,4 +11,6 @@ func DisplayInfo(c1 *Character) {
 	fmt.Println("Points de vie maximum :", c1.PVMax)
 	fmt.Println("Points de vie actuels :", c1.PVActuels)
 	fmt.Println("Items de l'inventaire :", c1.Inventaire)
+	fmt.Println("Skills:", c1.Skills)
+	fmt.Println("spellbook:", c1.Skills)
 }

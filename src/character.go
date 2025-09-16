@@ -7,6 +7,7 @@ type Character struct {
 	PVMax      int
 	PVActuels  int
 	Inventaire []Items
+	Skills     []string
 }
 
 type Items struct {
@@ -14,14 +15,15 @@ type Items struct {
 	Quantite int
 }
 
-func InitCharacter(nom string, classe string, niveau int, pvMax int, pvActuels int, Items []Items) *Character {
+func InitCharacter(nom string, classe string, niveau int, pvMax int, pvActuels int, items []Items, skills []string) *Character {
 	return &Character{
 		Nom:        nom,
 		Classe:     classe,
 		Niveau:     niveau,
 		PVMax:      pvMax,
 		PVActuels:  pvActuels,
-		Inventaire: Items,
+		Inventaire: items,
+		Skills:     skills,
 	}
 }
 
