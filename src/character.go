@@ -14,8 +14,8 @@ type Items struct {
 	Quantite int
 }
 
-func InitCharacter(nom string, classe string, niveau int, pvMax int, pvActuels int, Items []Items) Character {
-	return Character{
+func InitCharacter(nom string, classe string, niveau int, pvMax int, pvActuels int, Items []Items) *Character {
+	return &Character{
 		Nom:        nom,
 		Classe:     classe,
 		Niveau:     niveau,
