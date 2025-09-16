@@ -10,6 +10,7 @@ func main() {
 	item2 := adventure.InitItems("épée glacial", 2)
 	Items = append(Items, item1, item2)
 	c1 := adventure.InitCharacter("baltazar", "guerrier", 4, 100, 15, Items)
+	adventure.TakePot(c1)
 	adventure.DisplayInfo(c1)
 	adventure.AccessInventory(Items)
 }

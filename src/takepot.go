@@ -2,27 +2,27 @@ package adventure
 
 import "fmt"
 
-func TakePot(C Character) {
+func TakePot(c1 *Character) {
 	// Vérifier la potion dans l'inventaire
-	potion := -1
-	for _, Item := range C.Inventaire {
-		if Item.Nom == "potion" {
-			potion = 0
+	potionIndex := -1
+	for i, item := range c1.Inventaire {
+		if item.Nom == "potion" {
+			potionIndex = i
 			break
-		}
-		if potion != -1 {
-			// Guérir HP de Character
-			C.PVActuels += 50
-			// L'assurance HP Currence dépasse pas Max HP
-			if C.PVActuels >= C.PVMax {
-				C.PVActuels = C.PVMax
-			}
-			// Supprimer potion a été utilisé dans l'inventaire
-			C.Inventaire = append(C.Inventaire[:potion], C.Inventaire[potion+1:]...)
-			fmt.Println("Vous avez pris un potion et ajouté 50HP")
-		} else {
-			fmt.Println("Vous avez aucune potion")
 		}
 	}
 
+	if potionIndex != -1 {
+		// Guérir HP du Character
+		c1.PVActuels += 50
+		// S'assurer que PVActuels ne dépasse pas PVMax
+		if c1.PVActuels > c1.PVMax {
+			c1.PVActuels = c1.PVMax
+		}
+		// Supprimer la potion utilisée de l'inventaire
+		c1.Inventaire = append(c1.Inventaire[:potionIndex], c1.Inventaire[potionIndex+1:]...)
+		fmt.Println("Vous avez pris une potion et ajouté 50 HP")
+	} else {
+		fmt.Println("Vous n'avez aucune potion")
+	}
 }
