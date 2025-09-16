@@ -1,5 +1,7 @@
 package adventure
 
+// Tâche 1: structure Charactère et Item
+// Charactère de joueur
 type Character struct {
 	Nom        string
 	Classe     string

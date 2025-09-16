@@ -12,5 +12,5 @@ func main() {
 	c1 := adventure.InitCharacter("baltazar", "guerrier", 4, 100, 15, Items, []string{"coup de poing"})
 	adventure.TakePot(c1)
 	adventure.DisplayInfo(c1)
-	adventure.AccessInventory(Items)
+	adventure.AccessInventaire(Items)
 }
