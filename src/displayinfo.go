@@ -2,6 +2,7 @@ package adventure
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func DisplayInfo(c1 Character) {
@@ -10,5 +11,10 @@ func DisplayInfo(c1 Character) {
 	fmt.Println("Niveau :", c1.Niveau)
 	fmt.Println("Points de vie maximum :", c1.PVMax)
 	fmt.Println("Points de vie actuels :", c1.PVActuels)
-	fmt.Println("Items de l'inventaire :", c1.Inventaire)
+	fmt.Print("Items de l'inventaire :")
+	// Utiliser le boucle pour imprimer chaque Item
+	for _, item := range c1.Inventaire {
+		//fmt.Printf("(Quantité) %s %d", item.Nom, item.Quantite, "\n")
+		print(item.Nom + " " + strconv.Itoa(item.Quantite) + ", ")
+	}
 }
