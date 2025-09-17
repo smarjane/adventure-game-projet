@@ -2,16 +2,42 @@ package main
 
 import (
 	adventure "adventure/src"
+	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
-	var Items []adventure.Items
-	item1 := adventure.InitItems("potion", 3)
-	item2 := adventure.InitItems("épée glacial", 2)
-	Items = append(Items, item1, item2)
-	c1 := adventure.InitCharacter("baltazar", "guerrier", 4, 100, 15, Items, []string{"coup de poing"})
+	// tache 1
+	c1 := adventure.CharacterCreation()
 	adventure.TakePot(c1)
-	adventure.AccessInventaire(Items)
+	adventure.AccessInventaire(c1)
 	adventure.SpellBook(c1)
 	adventure.DisplayInfo(c1)
+
+	// Tâche 6
+	for {
+		fmt.Println("\n--- Menu Principal ---")
+		fmt.Println("1: Info de Character")
+		fmt.Println("2: L'inventaire")
+		fmt.Println("3: Quitter")
+		// ajouter apres
+
+		var choix string
+		fmt.Println("Entrer votre choix")
+		fmt.Scanln(&choix)
+		choix = strings.TrimSpace(choix)
+
+		switch choix {
+		case "1":
+			adventure.DisplayInfo(c1)
+		case "2":
+			adventure.AccessInventaire(c1)
+		case "3":
+			fmt.Println("En cours quitté..")
+			os.Exit(0)
+		default:
+			fmt.Println("Le choix est invalide, réessayer !")
+		}
+	}
 }
