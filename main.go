@@ -11,9 +11,12 @@ func main() {
 	// tache 1
 	c1 := adventure.CharacterCreation()
 	adventure.TakePot(c1)
-	adventure.AccessInventaire(c1)
 	adventure.SpellBook(c1)
-	adventure.DisplayInfo(c1)
+	nouvelItem := adventure.InitItems("lampe torche", 2)
+	adventure.ItemsMax(c1, nouvelItem)
+	if adventure.ItemsMax(c1, nouvelItem) {
+		c1.Inventaire = append(c1.Inventaire, nouvelItem)
+	}
 
 	// Tâche 6
 	for {
