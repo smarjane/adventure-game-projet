@@ -17,7 +17,7 @@ func main() {
 
 	// Tâche 6
 	for {
-		fmt.Println("\n--- menu Principal ---")
+		fmt.Println("\n--- Menu Principal ---")
 		fmt.Println("1: Info de Character")
 		fmt.Println("2: L'inventaire")
 		fmt.Println("3: Quitter")
