@@ -10,7 +10,6 @@ func SpellBook(c1 *Character) {
 			return
 		}
 	}
-	// Ajouter le sort
+	// Ajouter le sort sans afficher de message
 	c1.Skills = append(c1.Skills, "Boule de feu")
-	fmt.Println("Sort ajouté : Boule de feu")
 }
