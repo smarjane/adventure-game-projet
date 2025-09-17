@@ -8,36 +8,55 @@ import (
 )
 
 func main() {
-	// tache 1
+	// Tâche 1 : Création du personnage
 	c1 := adventure.CharacterCreation()
-	adventure.TakePot(c1)
-	adventure.AccessInventaire(c1)
-	adventure.SpellBook(c1)
-	adventure.DisplayInfo(c1)
 
-	// Tâche 6
 	for {
 		fmt.Println("\n--- Menu Principal ---")
-		fmt.Println("1: Info de Character")
-		fmt.Println("2: L'inventaire")
+		fmt.Println("1: Infos du personnage")
+		fmt.Println("2: Inventaire")
 		fmt.Println("3: Quitter")
-		// ajouter apres
 
 		var choix string
-		fmt.Println("Entrer votre choix")
+		fmt.Print("Entrez votre choix : ")
 		fmt.Scanln(&choix)
 		choix = strings.TrimSpace(choix)
 
 		switch choix {
 		case "1":
+			adventure.ClearTerminal()
 			adventure.DisplayInfo(c1)
+
 		case "2":
+			adventure.ClearTerminal()
 			adventure.AccessInventaire(c1)
+
+			// Sous-menu inventaire
+			fmt.Println("\n--- Menu Inventaire ---")
+			fmt.Println("1: Utiliser une potion")
+			fmt.Println("2: Retour au menu principal")
+
+			var choixInv string
+			fmt.Print("Entrez votre choix : ")
+			fmt.Scanln(&choixInv)
+			choixInv = strings.TrimSpace(choixInv)
+
+			switch choixInv {
+			case "1":
+				adventure.TakePot(c1)
+			case "2":
+				// Retour au menu principal
+			default:
+				fmt.Println("❌ Choix invalide dans le menu inventaire.")
+				//adventure.AccessInventaire(c1)
+			}
+
 		case "3":
-			fmt.Println("En cours quitté..")
+			fmt.Println("👋 Au revoir, aventure terminée.")
 			os.Exit(0)
+
 		default:
-			fmt.Println("Le choix est invalide, réessayer !")
+			fmt.Println("❌ Choix invalide, veuillez réessayer.")
 		}
 	}
 }

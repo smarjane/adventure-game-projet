@@ -23,11 +23,10 @@ func AccessInventaire(c1 *Character) {
 			if strings.ToLower(selected.Nom) == "potion" {
 				TakePot(c1)
 			}
-		} else if choix != 0 {
-			fmt.Println("Cet élément n'est pas encore pris en charge.")
 		}
 	}
 }
+
 func RemoveInventaire(Inventaire []Items, item string) ([]Items, bool) {
 	for i, Items := range Inventaire {
 		if Items.Nom == item {
