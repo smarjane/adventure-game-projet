@@ -10,6 +10,13 @@ import (
 func main() {
 	// Tâche 1 : Création du personnage
 	c1 := adventure.CharacterCreation()
+	adventure.TakePot(c1)
+	adventure.SpellBook(c1)
+	nouvelItem := adventure.InitItems("lampe torche", 2)
+	adventure.ItemsMax(c1, nouvelItem)
+	if adventure.ItemsMax(c1, nouvelItem) {
+		c1.Inventaire = append(c1.Inventaire, nouvelItem)
+	}
 
 	for {
 		fmt.Println("\n--- Menu Principal ---")

@@ -12,6 +12,7 @@ func DisplayInfo(c1 *Character) {
 	fmt.Println("Points de vie actuels :", c1.PVActuels)
 	fmt.Println("Items de l'inventaire :", c1.Inventaire)
 	fmt.Println("Skills:", c1.Skills)
+	fmt.Println("Money:", c1.Money)
 
 	if len(c1.Inventaire) == 0 {
 		fmt.Println("L'inventaire vide ")
